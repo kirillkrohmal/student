@@ -4,6 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="interviewDao" class="com.student.studentex.repository.StudentDaoImpl">
+        <constructor-arg ref="interviewService"/>
     </bean>
     <bean id="interviewService" class="com.student.studentex.repository.StudentDaoImpl">
         <constructor-arg name="studentDao" ref="interviewDao"/>
