@@ -2,6 +2,7 @@ package com.student.studentex.repository;
 
 
 import com.student.studentex.models.Interview;
+import com.student.studentex.service.StudentServiceImpl;
 import org.springframework.stereotype.Repository;
 
 import java.io.File;
@@ -45,6 +46,9 @@ public class StudentDaoImpl implements StudentDao{
             new Optional(),
             new ParseInt()
     };
+
+    public StudentDaoImpl(StudentServiceImpl studentService) {
+    }
 
     @Override
     public List<Interview> readQuestionsFromSource() throws Exception {

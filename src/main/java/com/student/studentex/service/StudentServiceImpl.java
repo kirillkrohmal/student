@@ -4,6 +4,7 @@ package com.student.studentex.service;
 import com.student.studentex.models.Interview;
 import com.student.studentex.models.Student;
 import com.student.studentex.repository.StudentDao;
+import com.student.studentex.repository.StudentDaoImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.MessageSource;
@@ -19,9 +20,13 @@ public class StudentServiceImpl implements StudentService{
     private StudentDao dao;
     private MessageSource ms;
 
+    @Autowired
     public StudentServiceImpl(StudentDao dao, MessageSource ms) {
         this.dao = dao;
         this.ms = ms;
+    }
+
+    public StudentServiceImpl(StudentDaoImpl studentDao) {
     }
 
     private static int checkAnswers(List<Integer> studentsAnswers, List<Integer> rightAnswers) {
